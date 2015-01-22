@@ -11,7 +11,8 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:weightSum="1">
+        android:weightSum="1"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,6 +79,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.06"
             android:height="50dp" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calcButton"
+            android:id="@+id/calcButton"
+            android:layout_gravity="center_horizontal"
+            android:onClick="calculator_click"
+            android:background="#ffff9e10" />
 
     </LinearLayout>
 </RelativeLayout>

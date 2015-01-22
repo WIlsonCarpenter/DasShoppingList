@@ -20,6 +20,11 @@
             android:name=".ListDetailsActivity"
             android:label="@string/title_activity_list_details" >
         </activity>
+
+        <activity
+            android:name=".CalcActivity"
+            android:label="CalcActivity" >
+        </activity>
     </application>
 
 </manifest>

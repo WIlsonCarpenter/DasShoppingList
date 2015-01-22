@@ -29,5 +29,6 @@
     <string name="buttonBracketsText">( )</string>
     <string name="buttonClearText">C</string>
     <string name="calcEntryBox">0123456789</string>
+    <string name="calcButton">Calculator?</string>
 
 </resources>

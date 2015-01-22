@@ -43,4 +43,9 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(getApplicationContext(), ListDetailsActivity.class);
         startActivity(intent);
     }
+
+    public void calculator_click(View v) {
+        Intent intent = new Intent(getApplicationContext(), CalcActivity.class);
+        startActivity(intent);
+    }
 }

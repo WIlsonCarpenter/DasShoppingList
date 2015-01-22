@@ -13,7 +13,6 @@ public class CalcActivity extends ActionBarActivity {
     private TextView calcScreen;
 
     private double sum;
-    private double memorySum;
     private double[] values;
     private String[] symbols;
     private int index;
@@ -21,8 +20,6 @@ public class CalcActivity extends ActionBarActivity {
     private boolean valueSet;
     private boolean resultDisplayed;
     private boolean periodUsed;
-
-
 
 
     @Override
@@ -59,15 +56,6 @@ public class CalcActivity extends ActionBarActivity {
 
     public void calcDigitClick(final View view) {
         Button btn = (Button)view;
-        /*//if(btn.equals)
-        if(btn.getText().equals("1")) {
-            Toast.makeText(getApplicationContext(), "1", Toast.LENGTH_LONG).show();
-            calcScreen.setText("1");
-        }
-        else
-            Toast.makeText(getApplicationContext(), ((Button) view).toString(),Toast.LENGTH_LONG).show();
-        //Toast.makeText(getApplicationContext(), "no way" ,Toast.LENGTH_LONG).show();*/
-
 
         if (resultDisplayed)
         {
@@ -86,17 +74,11 @@ public class CalcActivity extends ActionBarActivity {
         valueSet = true;
     }
 
-    /*public void operatorClick(final View view) {
-        Button btn = (Button)view;
 
-        if(btn.getText().equals("C")) {
-            calcScreen.setText("");
-        }
-    }*/
 
-    /// <summary>
-    /// Resets the calculator by erasing all previous calculations and clearing the screen.
-    /// </summary>
+    /**
+     * Resets the calculator by erasing all previous calculations and clearing the screen.
+     */
     private void resetCalc()
     {
         calcScreen.setText("0");
@@ -111,12 +93,12 @@ public class CalcActivity extends ActionBarActivity {
         symbols = new String[50];
     }
 
-    /// <summary>
-    /// Handles button clicks from the operator signs and the equals buttons.
-    /// The C, CE, and backspace buttons are controlled here as well.
-    /// </summary>
-    /// <param name="sender">The source of the button click.</param>
-    /// <param name="e">The event action that occured.</param>
+    /**
+     * Handles button clicks from the operator signs and the equals buttons.
+     * The C, CE, and backspace buttons are controlled here as well.
+
+     * @param view The android screen view.
+     */
     public void OperationButtonClick(final View view)
     {
         Button btn = (Button)view;
@@ -125,13 +107,9 @@ public class CalcActivity extends ActionBarActivity {
 
         if (value.equals("=")) {
             //Calculate only when the last entry was a numeric value.
-            if (valueSet && calcScreen.getText().toString() != "-")
-            {
+            if (valueSet && !calcScreen.getText().toString().equals("-")) {
                 storeNumber();
                 calculate();
-            }
-            else {
-                return;
             }
         } else if (value.equals("+")) {
             enterOperator("+");
@@ -175,12 +153,12 @@ public class CalcActivity extends ActionBarActivity {
 
     }
 
-    /// <summary>
-    /// Processes all the number (0-9) button clicks as well as the '.' and '+/-' buttons.
-    /// The values are displayed on the calculator entry screen.
-    /// </summary>
-    /// <param name="sender">The source of the button click.</param>
-    /// <param name="e">The event action that occured.</param>
+    /**
+     * Processes all the number (0-9) button clicks as well as the '.' and '+/-' buttons.
+     * The values are displayed on the calculator entry screen.
+     *
+     * @param view The android screen view.
+     */
     public void miscButtonClick(final View view) {
         Button btn = (Button)view;
         String value = btn.getText().toString();
@@ -220,10 +198,10 @@ public class CalcActivity extends ActionBarActivity {
 
     }
 
-    /// <summary>
-    /// Stores the current value on the entry screen by converting it to a double value
-    /// that then gets stored into the array of values.
-    /// </summary>
+    /**
+     * Stores the current value on the entry screen by converting it to a double value
+     * that then gets stored into the array of values.
+     */
     private void storeNumber()
     {
         //Restart calculator when more than 50 calculations are made in a row.
@@ -237,20 +215,18 @@ public class CalcActivity extends ActionBarActivity {
 
     }
 
-    /// <summary>
-    /// Stores the operator sign that the user enters. If a previous operator
-    /// was just set, it gets overwritten with the new one.
-    /// </summary>
-    /// <param name="sign">The operator that the user entered.</param>
+    /**
+     * Stores the operator sign that the user enters. If a previous operator
+     * was just set, it gets overwritten with the new one.
+
+     * @param sign The operation sign.
+     */
     private void enterOperator(String sign)
     {
         //Change the last operator if not value has been set yet.
-        if (operatorSet == true)
-        {
+        if (operatorSet) {
             symbols[index - 1] = sign;
-        }
-        else
-        {
+        } else {
             if ((valueSet || resultDisplayed) && !calcScreen.getText().toString().equals("-")) {
                 symbols[index] = sign;
                 storeNumber();
@@ -260,33 +236,32 @@ public class CalcActivity extends ActionBarActivity {
                 valueSet = false;
                 resultDisplayed = false;
             }
-
         }
 
     }
 
-    /// <summary>
-    /// Performs the calculation by looping through the entire array of previously entered
-    /// calculations. Left to right operation order is used.
-    /// </summary>
+    /**
+     * Performs the calculation by looping through the entire array of previously entered
+     * calculations. Left to right operation order is used.
+     */
     private void calculate()
     {
         sum = values[0];
         for (int i = 1; i < index; i++)
         {
-            if (symbols[i - 1] == "+")
+            if (symbols[i - 1].equals("+"))
             {
                 sum += values[i];
             }
-            else if (symbols[i - 1] == "-")
+            else if (symbols[i - 1].equals("-"))
             {
                 sum -= values[i];
             }
-            else if (symbols[i - 1] == "*")
+            else if (symbols[i - 1].equals("*"))
             {
                 sum *= values[i];
             }
-            else if (symbols[i - 1] == "/")
+            else if (symbols[i - 1].equals("/"))
             {
                 sum /= values[i];
             }

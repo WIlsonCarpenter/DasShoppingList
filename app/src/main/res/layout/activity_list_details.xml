@@ -14,12 +14,14 @@
         android:layout_alignParentEnd="true"
         android:weightSum="1">
 
+        <!--android:layout_width="match_parent"
+            android:layout_height="wrap_content"-->
+
+        <!--android:layout_gravity="center_horizontal"-->
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/shoppingItem"
             android:id="@+id/editText"
-            android:layout_gravity="center_horizontal"
-            android:text="Name of the list" />
+            android:text="Name of the list"/>
 
         <EditText
             android:layout_width="match_parent"

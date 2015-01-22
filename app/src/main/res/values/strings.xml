@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_list_details">ListDetailsActivity</string>
     <string name="das_shopping_list">Das Shopping List</string>
+    <string name="listOne">List 1</string>
 
 </resources>

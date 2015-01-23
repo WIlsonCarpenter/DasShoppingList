@@ -28,109 +28,269 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText2"
             android:layout_gravity="right"
-            android:text="Description of what the item is" />
+            android:text="Description of what the list is" />
 
-        <TextView
-            android:layout_width="116dp"
+        <EditText
+            android:layout_width="200dp"
             android:layout_height="49dp"
-            android:text="Enter item here"
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
 
-        <TableLayout
+            android:id="@+id/enterNewItem"
+            android:layout_gravity="center|center_horizontal|clip_vertical"
+            android:text="@string/enterNewItem" />
+
+
+
+
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
 
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Lettuce"
-                    android:id="@+id/checkBox"
+                    android:id="@+id/itemCheck1"
                     android:layout_column="0"
-                    android:checked="false" />
+                    android:checked="false"
+                    android:textSize="20dp"
+                    android:minWidth="100dp" />
 
                 <Space
-                    android:layout_width="20px"
-                    android:layout_height="20px"
-                    android:layout_column="2"
-                    android:layout_gravity="top" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.24" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton"
+                    android:id="@+id/imageButton3"
                     android:layout_column="5"
                     android:src="@android:drawable/arrow_down_float" />
-
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageButton2"
-                    android:layout_column="8"
-                    android:src="@android:drawable/arrow_up_float" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Qty: 1"
-                    android:id="@+id/textView3"
+                    android:text="Qty: 10"
+                    android:id="@+id/textView"
                     android:layout_column="0" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton4"
+                    android:layout_column="8"
+                    android:src="@android:drawable/arrow_up_float" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.18" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="$5.32"
-                    android:id="@+id/textView4"
+                    android:text="$0.59 ea"
+                    android:id="@+id/itemIndPrice1"
                     android:layout_column="2" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
 
                 <Space
-                    android:layout_width="20px"
-                    android:layout_height="20px"
-                    android:layout_column="0" />
-            </TableRow>
-        </TableLayout>
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.22" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
-                android:id="@+id/textView5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="subtotal: $5.90"
+                    android:id="@+id/itemTotalPrice1"
+                    android:layout_column="2"
+                    android:layout_weight="0.18" />
+            </LinearLayout>
 
             <Space
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.48" />
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
-                android:id="@+id/textView6" />
+                android:weightSum="1">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pickles"
+                    android:id="@+id/itemCheck2"
+                    android:layout_column="0"
+                    android:checked="false"
+                    android:textSize="20dp"
+                    android:minWidth="100dp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.24" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton5"
+                    android:layout_column="5"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Qty: 5"
+                    android:id="@+id/itemQty2"
+                    android:layout_column="0" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton6"
+                    android:layout_column="8"
+                    android:src="@android:drawable/arrow_up_float" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="$3.99 ea"
+                    android:id="@+id/itemIndPrice2"
+                    android:layout_column="2" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.22" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="subtotal: $19.95"
+                    android:id="@+id/itemTotalPrice2"
+                    android:layout_column="2"
+                    android:layout_weight="0.18" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Milk"
+                    android:id="@+id/itemCheck3"
+                    android:layout_column="0"
+                    android:checked="false"
+                    android:textSize="20dp"
+                    android:minWidth="100dp"/>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.24" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton7"
+                    android:layout_column="5"
+                    android:src="@android:drawable/arrow_down_float" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Qty: 3"
+                    android:id="@+id/itemQty3"
+                    android:layout_column="0" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton8"
+                    android:layout_column="8"
+                    android:src="@android:drawable/arrow_up_float" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="$5.25 ea"
+                    android:id="@+id/itemIndPrice3"
+                    android:layout_column="2" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.22" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="subtotal: $15.75"
+                    android:id="@+id/itemTotalPrice3"
+                    android:layout_column="2"
+                    android:layout_weight="0.18" />
+            </LinearLayout>
         </LinearLayout>
+
+
+
     </LinearLayout>
 </RelativeLayout>

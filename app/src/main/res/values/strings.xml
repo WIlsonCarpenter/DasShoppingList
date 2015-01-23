@@ -7,6 +7,8 @@
     <string name="title_activity_list_details">ListDetailsActivity</string>
     <string name="das_shopping_list">Das Shopping List</string>
     <string name="listOne">List 1</string>
+    <string name="calcMenuButton">Calculator</string>
+    <string name="listsMenuButton">Lists</string>
 
     <string name="button0text">0</string>
     <string name="button1text">1</string>

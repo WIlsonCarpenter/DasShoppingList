@@ -80,14 +80,5 @@
             android:layout_weight="0.06"
             android:height="50dp" />
 
-        <Button
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="@string/calcButton"
-            android:id="@+id/calcButton"
-            android:layout_gravity="center_horizontal"
-            android:onClick="calculator_click"
-            android:background="#ffff9e10" />
-
     </LinearLayout>
 </RelativeLayout>

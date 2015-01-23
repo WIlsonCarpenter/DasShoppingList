@@ -1,5 +1,6 @@
 package com.dasshoppinglist.dasshoppinglist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -47,9 +48,14 @@ public class CalcActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+/*
+        switch (id) {
+            case R.id.listsMenuButton:
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                return true;
         }
+*/
 
         return super.onOptionsItemSelected(item);
     }

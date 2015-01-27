@@ -20,10 +20,13 @@
             android:name=".ListDetailsActivity"
             android:label="@string/title_activity_list_details" >
         </activity>
-
         <activity
             android:name=".CalcActivity"
             android:label="CalcActivity" >
+        </activity>
+        <activity
+            android:name=".ItemDetailsActivity"
+            android:label="@string/title_activity_item_details" >
         </activity>
     </application>
 

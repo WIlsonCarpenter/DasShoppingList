@@ -1,9 +1,13 @@
 package com.dasshoppinglist.dasshoppinglist;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class ItemDetailsActivity extends ActionBarActivity {
@@ -35,5 +39,19 @@ public class ItemDetailsActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onSave(final View view) {
+        Intent data = new Intent();
+
+        //---get the EditText view---
+        EditText txt_price = (EditText) findViewById(R.id.priceField);
+
+        //---set the data to pass back---
+        data.setData(Uri.parse(txt_price.getText().toString()));
+        setResult(RESULT_OK, data);
+
+        //---closes the activity---
+        finish();
     }
 }

@@ -48,14 +48,14 @@ public class CalcActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-/*
+
         switch (id) {
             case R.id.listsMenuButton:
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 return true;
         }
-*/
+
 
         return super.onOptionsItemSelected(item);
     }

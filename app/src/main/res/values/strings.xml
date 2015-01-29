@@ -9,6 +9,7 @@
     <string name="listOne">List 1</string>
     <string name="calcMenuButton">Calculator</string>
     <string name="listsMenuButton">Lists</string>
+
     <string name="button0text">0</string>
     <string name="button1text">1</string>
     <string name="button2text">2</string>
@@ -32,12 +33,5 @@
     <string name="calcEntryBox">0123456789</string>
     <string name="calcButton">Calculator?</string>
     <string name="enterNewItem">Enter new item here</string>
-    <string name="title_activity_item_details">ItemDetailsActivity</string>
-    <string name="price">Price</string>
-    <string name="notes">Notes</string>
-    <string name="quantity">Quantity</string>
-    <string name="category">Category</string>
-    <string name="itemName">Carrots</string>
-    <string name="cancel">Cancel</string>
-    <string name="ok">OK</string>
+
 </resources>

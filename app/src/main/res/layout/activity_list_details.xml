@@ -21,14 +21,14 @@
         <EditText
             style="@style/shoppingItem"
             android:id="@+id/editText"
-            android:hint="Name of the list"/>
+            android:text="Name of the list"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText2"
             android:layout_gravity="right"
-            android:hint="Description of what the list is" />
+            android:text="Description of what the list is" />
 
         <EditText
             android:layout_width="200dp"
@@ -36,7 +36,7 @@
 
             android:id="@+id/enterNewItem"
             android:layout_gravity="center|center_horizontal|clip_vertical"
-            android:hint="@string/enterNewItem" />
+            android:text="@string/enterNewItem" />
 
 
 
@@ -92,15 +92,6 @@
                     android:id="@+id/imageButton4"
                     android:layout_column="8"
                     android:src="@android:drawable/arrow_up_float" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="51dp"
-                    android:layout_height="35dp"
-                    android:text="Edit"
-                    android:id="@+id/button7"
-                    android:layout_weight="0.37"
-                    android:onClick="onEditClick"/>
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"

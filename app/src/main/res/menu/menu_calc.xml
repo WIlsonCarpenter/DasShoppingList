@@ -2,7 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.dasshoppinglist.dasshoppinglist.CalcActivity">
-    <!--This stuff wont show up on the calculator page. The menu is sstaying the same across all pages.-->
+    <!--This stuff wont show up on the calculator page. The menu is staying the same across all pages.-->
     <item android:id="@+id/listsMenuButton" android:title="@string/listsMenuButton"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>

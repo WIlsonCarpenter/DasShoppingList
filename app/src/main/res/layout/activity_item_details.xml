@@ -137,11 +137,13 @@
                 android:id="@+id/button6"
                 android:onClick="onSave"
                 style="@style/confirmButton"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cancel"
-                android:id="@+id/button5"/>
+                android:id="@+id/button5"
+                style="@style/cancelButton"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -1,12 +1,21 @@
 package com.dasshoppinglist.dasshoppinglist;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 
 public class ListDetailsActivity extends ActionBarActivity {
+    int request_Code = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,4 +45,45 @@ public class ListDetailsActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onEditClick(final View view) {
+        //startActivity(new Intent("net.learn2develop.SecondActivity"));
+        //or
+        //startActivity(new Intent(this, SecondActivity.class));
+        //startActivity(new Intent(this, ItemDetailsActivity.class));
+        //startActivityForResult(new Intent("ItemDetailsActivity.class"), request_Code);
+
+        Intent i = new Intent(this, ItemDetailsActivity.class);
+
+        Bundle extras = new Bundle();
+        extras.putString("itemName", ((CheckBox)findViewById(R.id.itemCheck1)).getText().toString());
+
+        extras.putDouble("txt_price", Double.parseDouble(((TextView) findViewById(R.id.itemIndPrice1)).getText().toString()));
+        i.putExtras(extras);
+
+        startActivityForResult(i, request_Code);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        //findViewById(R.id.itemCheck1);
+
+        if (requestCode == request_Code) {
+            if (resultCode == RESULT_OK) {
+                //TextView test = (TextView)findViewById(R.id.itemIndPrice1);
+                //test.setText("$" + data.getData().toString() + " ea");
+                //Toast.makeText(this,data.getData().toString(), Toast.LENGTH_LONG).show();
+
+                //Bundle bundle = getIntent().getExtras();
+
+                Bundle bundle = data.getExtras();
+
+                //---get the data using the getString()---
+                ((TextView)findViewById(R.id.itemCheck1)).setText(bundle.getString("itemName"));
+                ((TextView)findViewById(R.id.itemIndPrice1)).setText( Double.toString(bundle.getDouble("txt_price")) );
+
+            }
+        }
+    }
+
 }

@@ -3,6 +3,7 @@ package com.dasshoppinglist.dasshoppinglist;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,8 +58,10 @@ public class ListDetailsActivity extends ActionBarActivity {
 
         Bundle extras = new Bundle();
         extras.putString("itemName", ((CheckBox)findViewById(R.id.itemCheck1)).getText().toString());
-
         extras.putDouble("txt_price", Double.parseDouble(((TextView) findViewById(R.id.itemIndPrice1)).getText().toString()));
+        extras.putInt("itemQty", Integer.parseInt(((TextView)findViewById(R.id.itemQty1)).getText().toString()));
+
+
         i.putExtras(extras);
 
         startActivityForResult(i, request_Code);
@@ -81,6 +84,7 @@ public class ListDetailsActivity extends ActionBarActivity {
                 //---get the data using the getString()---
                 ((TextView)findViewById(R.id.itemCheck1)).setText(bundle.getString("itemName"));
                 ((TextView)findViewById(R.id.itemIndPrice1)).setText( Double.toString(bundle.getDouble("txt_price")) );
+                ((TextView)findViewById(R.id.itemQty1)).setText( Integer.toString(bundle.getInt("itemQty")) );
 
             }
         }

@@ -28,10 +28,6 @@
             android:name=".ItemDetailsActivity"
             android:label="@string/title_activity_item_details">
         </activity>
-        <activity
-            android:name=".MainListActivity"
-            android:label="@string/title_activity_main_list" >
-        </activity>
     </application>
 
 </manifest>

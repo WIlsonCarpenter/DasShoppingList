@@ -66,8 +66,7 @@
                     android:id="@+id/itemCheck1"
                     android:layout_column="0"
                     android:checked="false"
-                    android:textSize="20dp"
-                    android:minWidth="100dp" />
+                    style="@style/listItem"/>
 
                 <Space
                     android:layout_width="wrap_content"
@@ -96,14 +95,7 @@
                     android:layout_column="8"
                     android:src="@android:drawable/arrow_up_float" />
 
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="51dp"
-                    android:layout_height="35dp"
-                    android:text="Edit"
-                    android:id="@+id/button7"
-                    android:layout_weight="0.37"
-                    android:onClick="onEditClick"/>
+
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -156,8 +148,7 @@
                     android:id="@+id/itemCheck2"
                     android:layout_column="0"
                     android:checked="false"
-                    android:textSize="20dp"
-                    android:minWidth="100dp" />
+                    style="@style/listItem" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -237,8 +228,7 @@
                     android:id="@+id/itemCheck3"
                     android:layout_column="0"
                     android:checked="false"
-                    android:textSize="20dp"
-                    android:minWidth="100dp"/>
+                    style="@style/listItem"/>
 
                 <Space
                     android:layout_width="wrap_content"

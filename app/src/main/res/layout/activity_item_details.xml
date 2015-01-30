@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,12 +18,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
-        <TextView
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/itemName"
-            android:id="@+id/textView3"
+            android:hint="Item Name"
+            android:id="@+id/itemName1"
             android:layout_gravity="center_horizontal" />
 
         <LinearLayout
@@ -127,7 +128,8 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1">
 
 
 
@@ -138,6 +140,11 @@
                 android:id="@+id/button6"
                 android:onClick="onSave"
                 style="@style/confirmButton"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
 
             <Button
                 android:layout_width="wrap_content"

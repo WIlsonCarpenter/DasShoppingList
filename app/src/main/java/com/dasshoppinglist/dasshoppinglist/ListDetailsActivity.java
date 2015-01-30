@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -22,6 +23,16 @@ public class ListDetailsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_details);
+
+        CheckBox temp = (CheckBox) findViewById(R.id.itemCheck1);
+        temp.setOnLongClickListener(new View.OnLongClickListener() {
+
+            public boolean onLongClick(View v) {
+                Log.d("DSS", "You held the check box");
+                onEditClick(v);
+                return true;
+            }
+        });
     }
 
 
@@ -90,4 +101,11 @@ public class ListDetailsActivity extends ActionBarActivity {
         }
     }
 
+
+
+    /*private OnClickListener mCorkyListener = new OnClickListener() {
+        public void onClick(View v) {
+            // do something when the button is clicked
+        }
+    };*/
 }

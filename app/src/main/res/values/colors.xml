@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="appBackground">#D5C08F</color>
-
+    <color name="optionButtonBackground">#000000</color>
+    <color name="optionButtonTextConfirm">#009900</color>
+    <color name="optionButtonTextCancel">#DD0000</color>
 </resources>

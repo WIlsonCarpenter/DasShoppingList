@@ -24,9 +24,10 @@ public class ItemDetailsActivity extends ActionBarActivity {
         Bundle bundle = getIntent().getExtras();
 
         //---get the data using the getString()---
-        ((EditText)findViewById(R.id.editText5)).setText(bundle.getString("itemName"));
+        ((EditText)findViewById(R.id.itemName1)).setText(bundle.getString("itemName"));
         ((EditText)findViewById(R.id.priceField)).setText( Double.toString(bundle.getDouble("txt_price")) );
         ((EditText)findViewById(R.id.quantity)).setText(Integer.toString(bundle.getInt("itemQty")));
+
     }
 
 
@@ -67,7 +68,7 @@ public class ItemDetailsActivity extends ActionBarActivity {
         //EditText txt_price = (EditText) findViewById(R.id.priceField);
 
 
-        extras.putString("itemName", ((EditText) findViewById(R.id.editText5)).getText().toString());
+        extras.putString("itemName", ((EditText) findViewById(R.id.itemName1)).getText().toString());
         extras.putDouble("txt_price", Double.parseDouble(((EditText) findViewById(R.id.priceField)).getText().toString()));
         extras.putInt("itemQty", Integer.parseInt(((EditText) findViewById(R.id.quantity)).getText().toString()));
         //---set the data to pass back---

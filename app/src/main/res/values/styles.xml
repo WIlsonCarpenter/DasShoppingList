@@ -6,7 +6,7 @@
     </style>
 
 
-    <style name="shoppingItem" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="shoppingItem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -15,7 +15,7 @@
 
     </style>
 
-    <style name="shoppingItem2notused" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="shoppingItem2notused">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_horizontal</item>
@@ -25,7 +25,7 @@
     </style>
 
 
-    <style name="digitBtnStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="digitBtnStyle">
         <!--<item name="android:gravity">center</item>
         <item name="android:layout_marginTop">4dp</item>-->
         <!--//mine-->
@@ -39,7 +39,7 @@
         <item name="android:textSize">30dp</item>
     </style>
 
-    <style name="opBtnStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="opBtnStyle">
         <item name="android:minHeight">80dp</item>
         <item name="android:maxHeight">80dp</item>
         <item name="android:minWidth">80dp</item>
@@ -50,7 +50,7 @@
         <item name="android:textSize">30dp</item>
     </style>
 
-    <style name="blueButton" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="blueButton">
         <item name="android:minHeight">80dp</item>
         <item name="android:maxHeight">80dp</item>
         <item name="android:minWidth">80dp</item>
@@ -73,14 +73,25 @@
     </style>
 
     <style name="confirmButton">
+        <item name="android:background">@color/optionButtonBackground</item>
+        <item name="android:textColor">@color/optionButtonTextConfirm</item>
         <item name="android:width">150dp</item>
         <item name="android:textSize">30dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_gravity">bottom</item>
     </style>
     <style name="cancelButton">
+        <item name="android:background">@color/optionButtonBackground</item>
+        <item name="android:textColor">@color/optionButtonTextCancel</item>
         <item name="android:width">150dp</item>
         <item name="android:textSize">30dp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="listItem">
+        <item name="android:textSize">27dp</item>
+        <item name="android:minWidth">100dp</item>
+
+
     </style>
 </resources>

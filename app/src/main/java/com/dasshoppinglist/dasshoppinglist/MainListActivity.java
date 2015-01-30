@@ -1,31 +1,42 @@
 package com.dasshoppinglist.dasshoppinglist;
 
+import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+//import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.app.ListActivity;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+
+import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainListActivity extends ListActivity {
+    int request_Code = 2;
+    //list of list items
+    ArrayList<String> listItems = new ArrayList<String>();
+    //string adapter to handle listview
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_list);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
+        setListAdapter(adapter);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+       // getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    @Override
+/*    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -41,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void list_click(View v) {
         Intent intent = new Intent(getApplicationContext(), ListDetailsActivity.class);
@@ -52,9 +63,12 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(getApplicationContext(), CalcActivity.class);
         startActivity(intent);
     }
-    //just for testing
-    public void listClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), MainListActivity.class);
-        startActivity(intent);
+
+
+
+    public void addItems(View v) {
+        String listName = ((EditText)findViewById(R.id.addListTextBox)).getText().toString();
+        listItems.add(listName);
+        adapter.notifyDataSetChanged();
     }
 }

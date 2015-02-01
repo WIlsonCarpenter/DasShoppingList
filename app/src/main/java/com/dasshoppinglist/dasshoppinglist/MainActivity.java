@@ -1,13 +1,11 @@
 package com.dasshoppinglist.dasshoppinglist;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
@@ -34,9 +32,16 @@ public class MainActivity extends ListActivity {
      */
     public void addItems(View v) {
         String listName = ((EditText)findViewById(R.id.addListTextBox)).getText().toString();
-        listItems.add(listName);
-        adapter.notifyDataSetChanged();
-        ((EditText)findViewById(R.id.addListTextBox)).setText("");
+        EditText addListTextBox = (EditText)findViewById((R.id.addListTextBox));
+        Button addButton = (Button)findViewById(R.id.addBtn);
+
+        //if the textbox is currently empty, do nothing
+        if(addListTextBox.getText().toString().equals("")) {
+            return;
+        }
+        adapter.add(listName);
+
+        addListTextBox.setText("");
     }
 
     public void list_click(View v) {

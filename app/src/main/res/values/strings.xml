@@ -42,5 +42,13 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="title_activity_main_list">MainListActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="selectCategory">Select a category</string>
+    <string-array name="categoryArray">
+        <item>Dairy</item>
+        <item>Baking</item>
+        <item>Produce</item>
+    </string-array>
 
 </resources>

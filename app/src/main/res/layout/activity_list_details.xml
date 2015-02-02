@@ -66,6 +66,7 @@
                     android:id="@+id/itemCheck1"
                     android:layout_column="0"
                     android:checked="false"
+                    android:onClick="onCheckClick"
                     style="@style/listItem"/>
 
                 <Space
@@ -94,6 +95,8 @@
                     android:id="@+id/imageButton4"
                     android:layout_column="8"
                     android:src="@android:drawable/arrow_up_float" />
+
+
 
 
             </LinearLayout>
@@ -148,6 +151,7 @@
                     android:id="@+id/itemCheck2"
                     android:layout_column="0"
                     android:checked="false"
+                    android:onClick="onCheckClick"
                     style="@style/listItem" />
 
                 <Space
@@ -228,6 +232,7 @@
                     android:id="@+id/itemCheck3"
                     android:layout_column="0"
                     android:checked="false"
+                    android:onClick="onCheckClick"
                     style="@style/listItem"/>
 
                 <Space

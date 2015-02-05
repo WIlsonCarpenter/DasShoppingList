@@ -27,13 +27,26 @@
         android:layout_gravity="right"
         android:hint="Description of what the list is" />
 
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="49dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:id="@+id/enterNewItem"
-        android:layout_gravity="center|center_horizontal|clip_vertical"
-        android:hint="@string/enterNewItem" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="49dp"
+
+            android:id="@+id/enterNewItem"
+            android:layout_gravity="center|center_horizontal|clip_vertical"
+            android:hint="@string/enterNewItem" />
+
+        <Button
+            android:text="+"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addItems"/>
+    </LinearLayout>
+
 
 
 
@@ -284,6 +297,14 @@
                 android:layout_column="2"
                 android:layout_weight="0.18" />
         </LinearLayout>
+
+        <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:drawSelectorOnTop="false"
+            android:id="@+id/listItems" >
+        </ListView>
+
     </LinearLayout>
 
 </LinearLayout>

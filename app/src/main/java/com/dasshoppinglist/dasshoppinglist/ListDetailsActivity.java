@@ -9,13 +9,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class ListDetailsActivity extends ActionBarActivity {
     int request_Code = 1;
     boolean ticked = false;
+
+    //Items for storing list of items
+    ArrayList<String> listItems;
+    //string adapter to handle listview
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,17 @@ public class ListDetailsActivity extends ActionBarActivity {
                 return true;
             }
         });
+
+
+        //Items to store the list of items
+        listItems = new ArrayList<String>();
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listItems);
+        //setListAdapter(adapter);
+
+        ListView myList=(ListView)findViewById(R.id.listItems);
+
+        myList.setAdapter(adapter);
+
     }
 
 
@@ -110,6 +132,23 @@ public class ListDetailsActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * Takes text from the textbox and adds it to the listview
+     * @param v
+     */
+    public void addItems(View v) {
+        String itemName = ((EditText)findViewById(R.id.enterNewItem)).getText().toString();
+        EditText enterNewItem = (EditText)findViewById((R.id.enterNewItem));
+
+        //if the textbox is currently empty, do nothing
+        if(itemName.equals("")) {
+            return;
+        }
+
+        adapter.add(itemName);
+
+        enterNewItem.setText("");
+    }
 
 
     /*private OnClickListener mCorkyListener = new OnClickListener() {

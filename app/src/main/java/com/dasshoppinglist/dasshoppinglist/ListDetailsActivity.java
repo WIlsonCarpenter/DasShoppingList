@@ -1,23 +1,21 @@
 package com.dasshoppinglist.dasshoppinglist;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 
 public class ListDetailsActivity extends ActionBarActivity {
     int request_Code = 1;
-
+    boolean ticked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +96,17 @@ public class ListDetailsActivity extends ActionBarActivity {
                 ((TextView)findViewById(R.id.itemQty1)).setText( Integer.toString(bundle.getInt("itemQty")) );
 
             }
+        }
+    }
+    //handles when an item is checked off the list
+    public void onCheckClick(View view) {
+        CheckBox chkBox = (CheckBox)view;
+        if (chkBox.isChecked()) {
+            chkBox.setTextColor(Color.GRAY);
+            chkBox.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+        } else {
+            chkBox.setTextColor(Color.BLACK);
+            chkBox.setPaintFlags(0);
         }
     }
 

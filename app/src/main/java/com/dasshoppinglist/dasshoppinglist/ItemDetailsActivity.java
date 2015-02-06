@@ -1,9 +1,12 @@
 package com.dasshoppinglist.dasshoppinglist;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,9 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class ItemDetailsActivity extends ActionBarActivity {
     String[] categories;
+    ArrayList<String> catList;
+    ArrayAdapter<String> adapter;
+    Spinner catSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +43,17 @@ public class ItemDetailsActivity extends ActionBarActivity {
 
         //initialize category array with values from strings.xml
         categories = getResources().getStringArray(R.array.categoryArray);
-        Spinner catSpinner = (Spinner) findViewById(R.id.categorySpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, categories);
+        catSpinner = (Spinner) findViewById(R.id.categorySpinner);
+
+        catList= new ArrayList<String>(Arrays.asList(categories));
+
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, catList);
         catSpinner.setAdapter(adapter);
 
         //---get the Bundle object passed in---
         Bundle bundle = getIntent().getExtras();
+
 
         //---get the data using the getString()---
         ((EditText)findViewById(R.id.itemName1)).setText(bundle.getString("itemName"));
@@ -106,5 +119,38 @@ public class ItemDetailsActivity extends ActionBarActivity {
 
         //---closes the activity---
         finish();
+    }
+
+    public void addCategoryClick(View view) {
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View addCategoryPrompt = layoutInflater.inflate(R.layout.prompt_add_category, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setView(addCategoryPrompt);
+
+        final EditText newCategory = (EditText)addCategoryPrompt.findViewById(R.id.addCategoryEdit);
+
+        alertDialogBuilder.setCancelable(false)
+                          .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                              @Override
+                              public void onClick(DialogInterface dialog, int which) {
+                                  String newCat = newCategory.getText().toString();
+                                  adapter.add(newCat);
+                                  catSpinner.setAdapter(adapter);
+
+                              }
+                          })
+                          .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                              @Override
+                              public void onClick(DialogInterface dialog, int which) {
+                                  dialog.cancel();
+                              }
+                          });
+        AlertDialog addCategoryDialog = alertDialogBuilder.create();
+        addCategoryDialog.show();
+
+    }
+
+    public void okAddCategory(View view) {
+
     }
 }

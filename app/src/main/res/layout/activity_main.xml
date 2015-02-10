@@ -32,14 +32,14 @@
             android:text="@string/addListButton"
             android:onClick="addItems"
         />
-        <EditText
-            android:id="@+id/addListTextBox"
+        <EditText android:id="@+id/addListTextBox"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/addListButton"
             android:maxLines="1"
             android:maxLength="35"
-            android:imeOptions="actionDone"/>
+            android:imeOptions="actionDone"
+            android:inputType="text"/>
 
         <ListView
             android:layout_width="fill_parent"

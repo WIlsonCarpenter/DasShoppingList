@@ -35,7 +35,7 @@
         <EditText
             android:layout_width="200dp"
             android:layout_height="49dp"
-
+            android:inputType="text"
             android:id="@+id/enterNewItem"
             android:layout_gravity="center|center_horizontal|clip_vertical"
             android:hint="@string/enterNewItem" />

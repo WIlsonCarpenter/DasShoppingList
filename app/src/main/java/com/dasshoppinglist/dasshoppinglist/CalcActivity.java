@@ -127,18 +127,6 @@ public class CalcActivity extends ActionBarActivity {
             enterOperator("*");
         } else if (value.equals("C")) {
             resetCalc();
-        } else if (value.equals("CE")) {
-            //Reset the calculator if calculation was just made, otherwise reset the current number.
-            if (resultDisplayed)
-            {
-                resetCalc();
-            }
-            else
-            {
-                calcScreen.setText("");
-                periodUsed = false;
-                valueSet = false;
-            }
         } else if (value.equals("←")) {
             if (calcScreen.getText().length() != 0 && valueSet) {
                 //Check if the digit being deleted is a period.
@@ -276,7 +264,6 @@ public class CalcActivity extends ActionBarActivity {
         double tempSum = sum;
         resetCalc();
         calcScreen.setText("" + tempSum);
-        storeNumber();
         resultDisplayed = true;
     }
 

@@ -26,50 +26,47 @@
 
 
     <style name="digitBtnStyle">
-        <!--<item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">4dp</item>-->
-        <!--//mine-->
-        <item name="android:minHeight">80dp</item>
-        <item name="android:maxHeight">80dp</item>
-        <item name="android:minWidth">80dp</item>
-        <item name="android:maxWidth">80dp</item>
+        <item name="android:minHeight">@dimen/calcButtonSize</item>
+        <item name="android:maxHeight">@dimen/calcButtonSize</item>
+        <item name="android:minWidth">@dimen/calcButtonSize</item>
+        <item name="android:maxWidth">@dimen/calcButtonSize</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:background">#ff000000</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
     <style name="opBtnStyle">
-        <item name="android:minHeight">80dp</item>
-        <item name="android:maxHeight">80dp</item>
-        <item name="android:minWidth">80dp</item>
-        <item name="android:maxWidth">80dp</item>
+        <item name="android:minHeight">@dimen/calcButtonSize</item>
+        <item name="android:maxHeight">@dimen/calcButtonSize</item>
+        <item name="android:minWidth">@dimen/calcButtonSize</item>
+        <item name="android:maxWidth">@dimen/calcButtonSize</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:background">#ff008000</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
     <style name="blueButton">
-        <item name="android:minHeight">80dp</item>
-        <item name="android:maxHeight">80dp</item>
-        <item name="android:minWidth">80dp</item>
-        <item name="android:maxWidth">80dp</item>
+        <item name="android:minHeight">@dimen/calcButtonSize</item>
+        <item name="android:maxHeight">@dimen/calcButtonSize</item>
+        <item name="android:minWidth">@dimen/calcButtonSize</item>
+        <item name="android:maxWidth">@dimen/calcButtonSize</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:background">#ff0600ff</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
-    <style name="redButton" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:minHeight">80dp</item>
-        <item name="android:maxHeight">80dp</item>
-        <item name="android:minWidth">80dp</item>
-        <item name="android:maxWidth">80dp</item>
+    <style name="redButton">
+        <item name="android:minHeight">@dimen/calcButtonSize</item>
+        <item name="android:maxHeight">@dimen/calcButtonSize</item>
+        <item name="android:minWidth">@dimen/calcButtonSize</item>
+        <item name="android:maxWidth">@dimen/calcButtonSize</item>
         <item name="android:textColor">#ffffffff</item>
         <item name="android:background">#ffff0007</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">30sp</item>
     </style>
 
     <style name="confirmButton">

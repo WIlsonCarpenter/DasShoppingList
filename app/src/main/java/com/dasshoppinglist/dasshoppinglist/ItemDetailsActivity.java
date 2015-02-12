@@ -44,7 +44,6 @@ public class ItemDetailsActivity extends ActionBarActivity {
         //initialize category array with values from strings.xml
         categories = getResources().getStringArray(R.array.categoryArray);
         catSpinner = (Spinner) findViewById(R.id.categorySpinner);
-
         catList= new ArrayList<String>(Arrays.asList(categories));
 
         adapter = new ArrayAdapter<String>(this,
@@ -136,7 +135,6 @@ public class ItemDetailsActivity extends ActionBarActivity {
                                   String newCat = newCategory.getText().toString();
                                   adapter.add(newCat);
                                   catSpinner.setAdapter(adapter);
-
                               }
                           })
                           .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
